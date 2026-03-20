@@ -12,6 +12,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using MakersMarkt.Data; // Voeg de Data namespace toe
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,6 +27,14 @@ namespace MakersMarkt
         public MainWindow()
         {
             InitializeComponent();
+
+            Title = "MakersMarkt";
+
+            using var db = new AppDbContext();
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
+
+            contentFrame.Navigate(typeof(HomePage));
         }
     }
 }
