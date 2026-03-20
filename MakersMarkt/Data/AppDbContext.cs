@@ -14,7 +14,7 @@ namespace MakersMarkt.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
-                ConfigurationManager.ConnectionStrings["BarrocIntensDatabase"].ConnectionString,
+                ConfigurationManager.ConnectionStrings["MakersMarktDb"].ConnectionString,
                 ServerVersion.Parse("8.0.30") 
             );
         }
