@@ -6,9 +6,51 @@
     xmlns:local="using:MakersMarkt"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Background="#F4EBD0">
 
-    <Grid>
+	<ScrollViewer
+        VerticalScrollBarVisibility="Auto"
+        HorizontalScrollBarVisibility="Disabled"
+        Padding="10">
 
-    </Grid>
+		<!-- Je eigen content, die onder de vaste header in MainWindow verschijnt -->
+		<StackPanel Spacing="10">
+			<TextBlock Text="Welkom op MakersMarkt"
+                       FontSize="24"
+                       FontWeight="Bold" 
+                       Foreground="#333333" />
+            
+            <Button Content="Plaats een bestelling" 
+                    Background="#E2725B" 
+                    Foreground="White"
+                    FontSize="16"
+                    Padding="15,8"
+                    Margin="0,10,0,10"/>
+
+			<StackPanel>
+				<TextBlock Text="Uitgelichte Producten:" FontSize="20" FontWeight="Bold" Foreground="#333333" Margin="0,0,0,10"/>
+				<TextBlock Text="Item 1" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 2" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 3" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 4" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 5" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 6" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 7" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 8" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 9" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 10" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 11" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 12" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 13" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 14" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 15" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 16" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 17" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 18" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 19" FontSize="18" Foreground="#333333"/>
+				<TextBlock Text="Item 20" FontSize="18" Foreground="#333333"/>
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
 </Page>
