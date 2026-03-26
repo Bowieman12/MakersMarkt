@@ -27,5 +27,15 @@ namespace MakersMarkt.Pages.Login
         {
             InitializeComponent();
         }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Add logic for saving the registration here
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Add logic for the hyperlink here (e.g., navigate back to the Login page)
+        }
     }
 }
