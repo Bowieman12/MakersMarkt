@@ -14,6 +14,72 @@
     </Window.SystemBackdrop>
 
     <Grid>
-        <Frame x:Name="contentFrame" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- HEADER met Search Bar en Cart -->
+        <Border Grid.Row="0" Background="#F4EBD0" Padding="12" BorderBrush="#333333" BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="MakersMarkt"
+                           FontSize="24"
+                           FontWeight="Bold" 
+                           Foreground="#333333"
+                           VerticalAlignment="Center"/>
+
+                <!-- Search Bar -->
+                <AutoSuggestBox Grid.Column="1" 
+                                PlaceholderText="Zoeken..." 
+                                Width="300" 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"/>
+
+                <!-- Shopping Cart Pagina Knop -->
+                <Button Grid.Column="2" 
+                        Background="#E2725B" 
+                        Foreground="#FFFFFF"
+                        VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Glyph="&#xE7BF;" FontSize="16" />
+                        <TextBlock Text="Winkelwagen" />
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- ZIJ-MENU -->
+        <NavigationView x:Name="NavView" 
+                        Grid.Row="1"
+                        PaneDisplayMode="Left"
+                        IsBackButtonVisible="Collapsed"
+                        IsSettingsVisible="False"
+                        ItemInvoked="NavView_ItemInvoked"
+                        Background="#F4EBD0">
+            <NavigationView.Resources>
+                <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="#F4EBD0" />
+                <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="#F4EBD0" />
+                <SolidColorBrush x:Key="NavigationViewItemForeground" Color="#333333" />
+                <SolidColorBrush x:Key="NavigationViewItemForegroundPointerOver" Color="#E2725B" />
+                <SolidColorBrush x:Key="NavigationViewItemForegroundSelected" Color="#E2725B" />
+            </NavigationView.Resources>
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag="Home" Icon="Home" Content="Home" Foreground="#333333" />
+                <NavigationViewItem Tag="MyProducten" Icon="Folder" Content="Mijn Producten" Foreground="#333333" />
+                <NavigationViewItem Tag="AllProducts" Icon="Globe" Content="Alle Products" Foreground="#333333" />
+
+            </NavigationView.MenuItems>
+
+            <Border BorderBrush="#333333" BorderThickness="1,0,0,0">
+                <Frame x:Name="contentFrame" />
+            </Border>
+        </NavigationView>
     </Grid>
 </Window>
