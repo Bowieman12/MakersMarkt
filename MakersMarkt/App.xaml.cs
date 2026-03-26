@@ -26,6 +26,7 @@ namespace MakersMarkt
     /// </summary>
     public partial class App : Application
     {
+        public static int CurrentUserId { get; set; }
         private Window? _window;
 
         /// <summary>

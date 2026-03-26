@@ -1,5 +1,7 @@
+using MakersMarkt.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
@@ -26,6 +28,41 @@ namespace MakersMarkt.Pages.Login
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            var db = new AppDbContext();
+            if (string.IsNullOrWhiteSpace(UsernameTextBox.Text))
+            {
+                ErrorTextBlock.Text = "Gebruikersnaam moet ingevuld zijn!";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(PasswordPasswordBox.Password)){
+                ErrorTextBlock.Text = "Wachtwoord moet ingevuld zijn!";
+            }
+
+            var user = db.Users
+                        .Include(u => u.Role)
+                        .FirstOrDefault(u => u.Username == UsernameTextBox.Text);
+
+            if (user == null || !BCrypt.Net.BCrypt.Verify(PasswordPasswordBox.Password, user.Password))
+            {
+                ErrorTextBlock.Text = "Invalid username or password!";
+                ErrorTextBlock.Visibility = Visibility.Visible;
+                return;
+            }
+
+            App.CurrentUserId = user.Id;
+
+            Frame.Navigate(typeof(HomePage));
+        }
+
+        
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RegisterPage));
         }
     }
 }
