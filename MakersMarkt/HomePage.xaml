@@ -14,7 +14,6 @@
         HorizontalScrollBarVisibility="Disabled"
         Padding="10">
 
-		<!-- Je eigen content, die onder de vaste header in MainWindow verschijnt -->
 		<StackPanel Spacing="10">
 			<TextBlock Text="Welkom op MakersMarkt"
                        FontSize="24"
