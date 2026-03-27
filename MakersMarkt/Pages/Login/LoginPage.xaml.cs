@@ -56,6 +56,13 @@ namespace MakersMarkt.Pages.Login
 
             App.CurrentUserId = user.Id;
 
+            // Update het hoofdvenster (MainWindow) zodat de inlogknoppen en de header updaten
+            var window = (Application.Current as App)?.GetMainWindow();
+            if (window is MainWindow mainWindow)
+            {
+                mainWindow.UpdateLoginState();
+            }
+
             Frame.Navigate(typeof(HomePage));
         }
 

@@ -40,6 +40,51 @@
                                 Width="300" 
                                 HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"/>
+                
+                <!-- Account Sectie (User Info, Login, Logout) -->
+                <StackPanel Grid.Column="1" 
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Right" 
+                            Margin="0,0,16,0" 
+                            VerticalAlignment="Center"
+                            Spacing="12"> <!-- Spacing toegevoegd voor wat ruimte tussen de elementen -->
+
+                    <!-- User Info (Verborgen als niet ingelogd) -->
+                    <StackPanel x:Name="UserInfoPanel" 
+                                Orientation="Horizontal" 
+                                VerticalAlignment="Center" 
+                                Spacing="8"
+                                Visibility="Collapsed">
+                        <FontIcon Glyph="&#xE77B;" FontSize="16" Foreground="#333333" /> <!-- Persoon Icon -->
+                        <TextBlock x:Name="UsernameTextBlock" 
+                                   Text="Gebruikersnaam" 
+                                   FontWeight="SemiBold" 
+                                   Foreground="#333333" 
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <!-- Inlog Button -->
+                    <Button x:Name="LoginButton"
+                            Background="#E2725B" 
+                            Foreground="#FFFFFF"
+                            Visibility="Visible"
+                            Click="LoginButton_Click">
+                        <StackPanel>
+                            <TextBlock Text="Inloggen" />
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Uitlog Button -->
+                    <Button x:Name="LogoutButton"
+                            Background="#E2725B" 
+                            Foreground="#FFFFFF"
+                            Visibility="Collapsed"
+                            Click="LogoutButton_Click">
+                        <StackPanel>
+                            <TextBlock Text="Uitloggen" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
 
                 <!-- Shopping Cart Pagina Knop -->
                 <Button Grid.Column="2" 

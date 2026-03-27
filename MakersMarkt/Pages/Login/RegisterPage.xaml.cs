@@ -97,14 +97,6 @@ namespace MakersMarkt.Pages.Login
             Frame.Navigate(typeof(LoginPage));
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Add logic for saving the registration here
-        }
 
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Add logic for the hyperlink here (e.g., navigate back to the Login page)
-        }
     }
 }

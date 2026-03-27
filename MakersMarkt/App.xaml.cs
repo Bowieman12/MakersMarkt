@@ -47,5 +47,11 @@ namespace MakersMarkt
             _window = new MainWindow();
             _window.Activate();
         }
+
+        // Voeg dit toe in App.xaml.cs
+        public Window GetMainWindow()
+        {
+            return _window;
+        }
     }
 }
